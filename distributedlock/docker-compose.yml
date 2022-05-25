@@ -1,0 +1,19 @@
+version: "3.9"
+
+services:
+  redis:
+    image: redis
+    container_name: redis-cache
+    ports:
+      - "6379:6379"
+
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_DB=emp
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - "5432:5432"
+
+
